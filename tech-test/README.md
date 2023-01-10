@@ -1,27 +1,30 @@
-# TechTest
+# Angular Technical Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+This is a project was developed like a small technical test
 
-## Development server
+## Demo
+![todo-list](https://user-images.githubusercontent.com/15862286/211511085-13eb81d8-98ce-4129-b29d-353bc2216685.gif)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Quick start
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### clone the repo
+Go to your developer folder Clone this project repository to your local machine
 
-## Build
+#### change into the repo directory
+cd tech-test
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### install
+npm install
 
-## Running unit tests
+#### serve
+npm run server
+npm run start
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Running unit tests
+npm run test
 
-## Running end-to-end tests
+## Unit Tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![image](https://user-images.githubusercontent.com/15862286/211512277-2ab16650-63fe-4c65-9675-9827410e8aa6.png)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
