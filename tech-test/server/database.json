@@ -2,17 +2,24 @@
   "tasks": [
     {
       "id": 1,
-      "label": "Kitchen Cleanup",
-      "description":  "Clean my dirty kitchen",
+      "label": "Kitchen Cleanup!!",
+      "description": "Clean my dirty kitchen",
       "category": "house",
-      "done": false
+      "done": "Tue Jan 10 2023 13:06:04 GMT+0400 (Georgia Standard Time)"
     },
     {
       "id": 2,
       "label": "Taxes",
-      "description":  "Start doing my taxes and contact my accountant jhon for advice",
+      "description": "Start doing my taxes and contact my accountant jhon for advice",
       "category": "bureaucracy",
-      "done": "22-10-2019"
+      "done": "Tue Jan 10 2023 13:03:54 GMT+0400 (Georgia Standard Time)"
+    },
+    {
+      "id": 3,
+      "label": "Test",
+      "description": "Test description",
+      "category": "house",
+      "done": false
     }
   ]
 }

@@ -1,7 +1,11 @@
-.title-text{
-  font-size: 20px;
-  line-height: 1.5;
-  color: #20364b;
-  font-weight: 600;
-  font-family: 'ProximaNova', sans-serif;
+@import "../styles/colors";
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-color;
+  min-height: 100vh;
+  min-width: 100vw;
+  color: $white-color;
 }

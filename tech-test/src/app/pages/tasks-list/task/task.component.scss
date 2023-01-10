@@ -1,0 +1,56 @@
+@import "src/styles/colors";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid $light-secondary-color;
+  padding: 10px;
+  gap: 10px;
+  color: $white-color;
+  position: relative;
+
+  &:hover {
+    .actions {
+      display: inline-flex;
+    }
+  }
+}
+
+.name {
+  font-size: 18px;
+}
+
+.description {
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  font-size: 14px;
+}
+
+.actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: $light-back-color;
+  display: none;
+
+  .mat-button-toggle-appearance-standard {
+    background-color: $light-back-color;
+
+    ::ng-deep .mat-button-toggle-label-content {
+      line-height: 35px;
+    }
+  }
+
+  mat-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: $white-color;
+  }
+}
+
+

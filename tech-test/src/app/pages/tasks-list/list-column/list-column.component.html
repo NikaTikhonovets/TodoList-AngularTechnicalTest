@@ -1,0 +1,14 @@
+<h2>{{status}}</h2>
+<div cdkDropList
+     class="block-drop"
+     [id]="status"
+     (cdkDropListDropped)="droppedTask.emit($event.item.data.id)">
+  <div class="task"
+       *ngFor="let task of tasks"
+       cdkDrag
+       [cdkDragData]="task">
+    <app-task [task]="task"
+              (removeTask)="removeTask.emit(task.id)"
+              (editTask)="editTask.emit(task.id)"></app-task>
+  </div>
+</div>

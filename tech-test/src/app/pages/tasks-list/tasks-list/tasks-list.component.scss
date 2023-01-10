@@ -1,0 +1,57 @@
+@import "src/styles/colors";
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  max-width: 1400px;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.sidebar {
+  width: 30%;
+  height: 100vh;
+  background-color: $light-back-color;
+  padding: 50px 30px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  button {
+    color: $white-color;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+app-list-column {
+  width: 45%;
+}
+
+.columns {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

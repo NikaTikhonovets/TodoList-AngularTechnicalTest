@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@components/*": ["src/app/shared-components/*"],
+      "@services/*": ["src/app/services/*"],
+      "@interfaces/*": ["src/app/interfaces/*"],
+      "@enums/*": ["src/app/enums/*"],
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

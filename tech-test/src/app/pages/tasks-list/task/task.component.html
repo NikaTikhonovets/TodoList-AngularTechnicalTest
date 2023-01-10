@@ -1,0 +1,12 @@
+<ng-container *ngIf="task">
+  <span class="name">{{task.label}}</span>
+  <p class="description">{{task.description}}</p>
+  <app-category *ngIf="task.category">{{task.category}}</app-category>
+
+  <mat-button-toggle-group class="actions">
+    <mat-button-toggle [routerLink]="['/', routes.Task, task.id]"><mat-icon>open_in_new</mat-icon></mat-button-toggle>
+    <mat-button-toggle (click)="editTask.emit()"><mat-icon>edit</mat-icon></mat-button-toggle>
+    <mat-button-toggle (click)="removeTask.emit()"><mat-icon>delete</mat-icon></mat-button-toggle>
+  </mat-button-toggle-group>
+</ng-container>
+

@@ -1,0 +1,11 @@
+@import "src/styles/colors";
+
+:host {
+  display: flex;
+  background-color: $yellow-color;
+  padding: 3px 5px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  color: $dark-color;
+}

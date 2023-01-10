@@ -1,0 +1,47 @@
+<div class="details-content" *ngIf="!isEditMode; else formTemplate">
+  <h1>{{task?.label}}</h1>
+
+  <p>{{task?.description}}</p>
+
+  <app-category *ngIf="task?.category">{{task?.category}}</app-category>
+
+  <span> Status: {{task?.done ? 'Done' : 'To Do'}}</span>
+</div>
+
+<ng-template #formTemplate>
+  <form [formGroup]="taskFormGroup">
+    <mat-form-field appearance="fill">
+      <mat-label>Label</mat-label>
+      <input matInput formControlName="label" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <input matInput formControlName="category" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="done">
+        <mat-option [value]="false">To Do</mat-option>
+        <mat-option [value]="true">Done</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</ng-template>
+
+<div class="actions">
+  <button mat-raised-button color="accent"
+          *ngIf="isEditMode; else editBtnTemplate"
+          (click)="saveChanges()">Save</button>
+
+  <ng-template #editBtnTemplate>
+    <button mat-raised-button color="accent"
+            (click)="isEditMode = true">Edit</button>
+  </ng-template>
+</div>
+
+

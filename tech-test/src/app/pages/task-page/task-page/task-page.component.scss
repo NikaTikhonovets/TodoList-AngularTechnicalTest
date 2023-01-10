@@ -1,0 +1,15 @@
+@import "src/styles/colors";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 50vw;
+  min-height: 70vh;
+
+  a {
+    color: $primary-color;
+    margin-bottom: 50px;
+  }
+}
