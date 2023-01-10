@@ -15,14 +15,14 @@ Go to your developer folder Clone this project repository to your local machine
 cd tech-test
 
 #### install
-npm install
+`npm install`
 
 #### serve
-npm run server
-npm run start
+`npm run server`
+`npm run start`
 
 #### Running unit tests
-npm run test
+`npm run test`
 
 ## Unit Tests
 
