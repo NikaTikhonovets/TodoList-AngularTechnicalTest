@@ -3,7 +3,8 @@
 This is a project was developed like a small technical test
 
 ## Demo
-![todo-list](https://user-images.githubusercontent.com/15862286/211511085-13eb81d8-98ce-4129-b29d-353bc2216685.gif)
+![todo-list2](https://user-images.githubusercontent.com/15862286/211543444-ba8d8287-0579-4bec-93e7-b33d24ef8522.gif)
+
 
 
 ## Quick start
@@ -26,5 +27,5 @@ cd tech-test
 
 ## Unit Tests
 
-![image](https://user-images.githubusercontent.com/15862286/211512277-2ab16650-63fe-4c65-9675-9827410e8aa6.png)
+![image](https://user-images.githubusercontent.com/15862286/211543631-09d59d47-c958-4bc5-9de0-b05cbef303ca.png)
 
