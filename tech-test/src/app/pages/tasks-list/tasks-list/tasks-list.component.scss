@@ -11,7 +11,6 @@
 .main-content {
   flex: 1;
   height: 100%;
-  width: 100%;
   max-width: 1400px;
   padding: 100px;
   display: flex;
@@ -22,7 +21,7 @@
   .actions {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     margin-bottom: 40px;
   }
@@ -31,7 +30,8 @@
 .sidebar {
   width: 30%;
   height: 100vh;
-  background-color: $light-back-color;
+  background-color: $white-color;
+  box-shadow: 0 0 8px $light-secondary-color;;
   padding: 50px 30px 30px;
   display: flex;
   align-items: center;
@@ -39,19 +39,29 @@
   position: relative;
 
   button {
-    color: $white-color;
+    color: $dark-color;
     position: absolute;
     top: 5px;
     right: 5px;
   }
 }
 
-app-list-column {
-  width: 45%;
-}
-
-.columns {
+.tasks-wrapper {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-between;
+  overflow: auto;
+  border: 2px dashed $light-secondary-color;
+  min-height: 60vh;
+  max-height: 80vh;
+
+  .header {
+    border-bottom: 2px dashed $light-secondary-color;
+    display: flex;
+    padding: 5px 20px;
+  }
+
+  app-task {
+    border-bottom: 1px solid $light-secondary-color;
+  }
 }

@@ -23,12 +23,8 @@ export class TasksListComponent implements OnInit {
     this.getTasks();
   }
 
-  public get completedTasks(): Task[] {
-    return this.tasks.filter((task: Task) => !!task.done);
-  }
-
-  public get uncompletedTasks(): Task[] {
-    return this.tasks.filter((task: Task) => !task.done);
+  public taskTrackBy(index: number, task: Task) {
+    return task.id;
   }
 
   public setFilteredTasks(filters: Filters): void {
@@ -40,22 +36,16 @@ export class TasksListComponent implements OnInit {
     );
   }
 
-  public changeStatus(id: number, isDone: boolean): void {
-    const taskId: number = this.allTasks.findIndex((item: Task) => item.id === id);
+  public changeStatus(task: Task, isDone: boolean): void {
+    task.done = isDone ? new Date().toString() : false;
 
-    if (taskId === -1) {
-      return;
-    }
-
-    this.allTasks[taskId].done = isDone ? new Date().toString() : false;
-
-    this.tasksService.updateTask(this.allTasks[taskId]).pipe(
+    this.tasksService.updateTask(task).pipe(
       take(1)
     ).subscribe();
   }
 
-  public editTask(id: number): void {
-    this.selectedTask = this.tasks.find((task: Task) => task.id === id);
+  public editTask(task: Task): void {
+    this.selectedTask = task;
   }
 
   public getTasks(): void {

@@ -1,20 +1,21 @@
 <section class="main-content">
   <div class="actions">
-    <app-filters (changeFilters)="setFilteredTasks($event)"></app-filters>
-    <button mat-raised-button color="primary" (click)="addTask()">Add task</button>
+    <button mat-raised-button color="primary" (click)="addTask()">
+      <mat-icon>add</mat-icon> Add task
+    </button>
   </div>
 
-  <div class="columns" cdkDropListGroup>
-    <app-list-column [status]="'To Do'"
-                     [tasks]="uncompletedTasks"
-                     (editTask)="editTask($event)"
-                     (removeTask)="removeTask($event)"
-                     (droppedTask)="changeStatus($event, false)"></app-list-column>
-    <app-list-column [status]="'Done'"
-                     [tasks]="completedTasks"
-                     (editTask)="editTask($event)"
-                     (removeTask)="removeTask($event)"
-                     (droppedTask)="changeStatus($event, true )"></app-list-column>
+  <div class="tasks-wrapper">
+    <div class="header">
+      <app-filters (changeFilters)="setFilteredTasks($event)"></app-filters>
+    </div>
+
+    <app-task *ngFor="let task of tasks; trackBy: taskTrackBy"
+              (editTask)="editTask(task)"
+              (removeTask)="removeTask(task.id)"
+              (changeStatus)="changeStatus(task, !task.done)"
+              [task]="task">
+    </app-task>
   </div>
 </section>
 

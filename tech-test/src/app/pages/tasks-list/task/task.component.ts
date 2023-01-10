@@ -10,6 +10,7 @@ import { ApplicationRoutes } from '@enums/application-routes.enum';
 export class TaskComponent {
   @Input() public task: Task;
   @Output() public editTask: EventEmitter<void> = new EventEmitter<void>();
+  @Output() public changeStatus: EventEmitter<void> = new EventEmitter<void>();
   @Output() public removeTask: EventEmitter<void> = new EventEmitter<void>();
 
   public readonly routes: typeof ApplicationRoutes = ApplicationRoutes;

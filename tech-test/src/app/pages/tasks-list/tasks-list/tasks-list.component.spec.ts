@@ -64,8 +64,6 @@ describe('TasksListComponent', () => {
   });
 
   it('should be defined all methods', () => {
-    expect(component.completedTasks).toBeDefined();
-    expect(component.uncompletedTasks).toBeDefined();
     expect(component.setFilteredTasks).toBeDefined();
     expect(component.changeStatus).toBeDefined();
     expect(component.editTask).toBeDefined();
@@ -80,20 +78,6 @@ describe('TasksListComponent', () => {
     component.ngOnInit();
 
     expect(spyMethod).toHaveBeenCalledTimes(1);
-  });
-
-  it('completedTasks() should return completed tasks', () => {
-    component.tasks = [testCompletedTask, testUncompletedTask];
-    const completedTasks = component.completedTasks;
-
-    expect(completedTasks).toEqual([testCompletedTask]);
-  });
-
-  it('uncompletedTasks() should return uncompleted tasks', () => {
-    component.tasks = [testCompletedTask, testUncompletedTask];
-    const uncompletedTasks = component.uncompletedTasks;
-
-    expect(uncompletedTasks).toEqual([testUncompletedTask]);
   });
 
   describe('setFilteredTasks()', () => {
@@ -114,30 +98,22 @@ describe('TasksListComponent', () => {
     });
   });
 
-  describe('changeStatus()', () => {
-    it('should not save task when task id is invalid', () => {
-      component.changeStatus(5555, false);
+  it('changeStatus() should call service to save changes when task id is valid', () => {
+    const updatedTask = {
+      ...testUncompletedTask,
+      done: false
+    };
+    tasksServiceSpy.updateTask.and.returnValue(of(updatedTask));
 
-      expect(tasksServiceSpy.updateTask).toHaveBeenCalledTimes(0);
-    });
+    component.changeStatus(updatedTask, false);
 
-    it('should call service to save changes when task id is valid', () => {
-      const updatedTask = {
-        ...testUncompletedTask,
-        done: false
-      };
-      tasksServiceSpy.updateTask.and.returnValue(of(updatedTask));
-
-      component.changeStatus(1, false);
-
-      expect(tasksServiceSpy.updateTask).toHaveBeenCalledOnceWith(updatedTask);
-    });
+    expect(tasksServiceSpy.updateTask).toHaveBeenCalledOnceWith(updatedTask);
   });
 
   it('editTask() should set selected task', () => {
     component.selectedTask = null;
 
-    component.editTask(1);
+    component.editTask(testUncompletedTask);
 
     expect(component.selectedTask).toBe(testUncompletedTask);
   });

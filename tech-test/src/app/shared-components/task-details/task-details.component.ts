@@ -32,6 +32,7 @@ export class TaskDetailsComponent implements OnInit, OnChanges {
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes?.task?.currentValue && changes?.task?.previousValue) {
+      this.taskFormGroup.reset();
       this.task = changes?.task?.currentValue;
       this.taskFormGroup.patchValue({
         ...changes?.task?.currentValue,

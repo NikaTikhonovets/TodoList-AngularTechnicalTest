@@ -7,7 +7,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ListColumnComponent } from './list-column/list-column.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CategoryModule } from '@components/category/category.module';
 import { TaskDetailsModule } from '@components/task-details/task-details.module';
@@ -26,7 +25,6 @@ const routes: Routes = [
   declarations: [
     TasksListComponent,
     TaskComponent,
-    ListColumnComponent,
     FiltersComponent
   ],
   imports: [
