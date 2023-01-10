@@ -13,4 +13,8 @@ export class ListColumnComponent {
   @Output() public droppedTask: EventEmitter<number> = new EventEmitter<number>();
   @Output() public editTask: EventEmitter<number> = new EventEmitter<number>();
   @Output() public removeTask: EventEmitter<number> = new EventEmitter<number>();
+
+  public taskTrackBy(index: number, task: Task) {
+    return task.id;
+  }
 }
